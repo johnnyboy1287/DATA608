@@ -9,7 +9,7 @@ ui <- fluidPage(
     tags$style(
       HTML("
         body {
-          background-color: lightgreen;
+          background-color: #abf5bf;
         }
       ")
     )
@@ -22,6 +22,20 @@ ui <- fluidPage(
     ),
     mainPanel(
       leafletOutput("myMap", height = "600px")  # Increase map size
+    )
+  ),
+  fluidRow(
+    column(width = 12,
+           wellPanel(
+             h3("Map Information"),
+             p("This map displays demographics and Airbnb average prices segmented by ZIP code in New York City."),
+             p("The dropdown menu allows you to select a demographic variable to visualize on the map."),
+             p("The bivariate choropleth toggle allows you to display a combination of the selected demographic variable and average price on the map."),
+             p("The color of each ZIP code represents the value of the selected demographic variable, with darker shades indicating higher values."),
+             p("If the bivariate choropleth toggle is enabled, the color of each ZIP code represents a combination of the selected demographic variable and average price."),
+             p("Hover over a ZIP code to view its information, including the ZIP code itself, the value of the selected demographic variable, and the average price."),
+             
+           )
     )
   )
 )
